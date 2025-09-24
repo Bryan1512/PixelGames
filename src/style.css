@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-white bg-black antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold;
+  }
+}
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+
+@layer components {
+  .container-app {
+    @apply container mx-auto px-4;
+  }
+
+
+
+  .card {
+    @apply bg-gray-800 rounded-2xl shadow-xl p-8 border border-gray-700 transition-all hover:shadow-2xl hover:border-indigo-400;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-full shadow hover:from-indigo-700 hover:to-purple-700 transition transform hover:-translate-y-0.5;
+  }
+
+  .btn-whatsapp {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold py-3 px-6 rounded-full shadow hover:from-green-600 hover:to-emerald-700 transition transform hover:-translate-y-0.5;
+  }
+
+  .badge {
+    @apply absolute top-2 right-2 px-3 py-1 rounded-full text-white text-xs font-bold;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-center text-white mb-12;
+  }
+
+  .feature {
+    @apply bg-white rounded-xl p-6 shadow border border-gray-100 transition hover:border-indigo-200;
+  }
+
+  .faq {
+    @apply bg-gradient-to-r from-black to-blue-900 rounded-xl p-6 shadow border border-gray-100;
+  }
+
+  .faq summary {
+    @apply cursor-pointer font-semibold text-gray-400 list-none;
+  }
+
+  .faq[open] summary {
+    @apply text-indigo-600;
+  }
+
+  .faq p {
+    @apply text-white mt-2;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/60 backdrop-blur border border-white/40;
+  }
+}
+
+@layer components {
+  .product-media {
+    @apply relative w-full bg-black rounded-xl shadow-inner flex items-center justify-center h-48 md:h-56 lg:h-64 p-4 overflow-hidden;
+  }
+
+  .product-img {
+    @apply max-h-full max-w-full object-contain;
+  }
+
+  .product-card {
+    @apply bg-black rounded-2xl shadow-2xl p-8 hover:shadow-2xl hover:scale-105 transform transition-all duration-300 border border-gray-700;
+  }
+
+  .feature-card {
+    @apply flex items-start gap-4 p-6 rounded-xl;
+  }
+
+  .btn-buy {
+    @apply bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-full mt-6 w-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  .badge-popular {
+    @apply bg-red-500;
+  }
+
+  .badge-new {
+    @apply bg-green-500;
+  }
+
+  .badge-anime {
+    @apply bg-orange-500;
+  }
+
+  .badge-familia {
+    @apply bg-blue-500;
+  }
+
+  .badge-prime {
+    @apply bg-yellow-500;
+  }
+
+  .badge-premium {
+    @apply bg-purple-500;
+  }
+
+  @keyframes gradientX {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradientX {
+    background-size: 200% 200%;
+    animation: gradientX 2.5s ease infinite;
+  }
+
+}
